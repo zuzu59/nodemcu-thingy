@@ -8,7 +8,7 @@
   "activationCommands": {
     "atom-workspace": "nodemcu-thingy:toggle"
   },
-  "repository": "https://github.com/atom/nodemcu-thingy",
+  "repository": "https://github.com/holtermp/nodemcu-thingy",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
