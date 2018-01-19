@@ -1,10 +1,9 @@
 {
   "name": "nodemcu-thingy",
   "main": "./lib/nodemcu-thingy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Provides \"over the air\" access to your NodeMCU device (work in progress)",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "nodemcu-thingy:toggle"
   },
@@ -13,6 +12,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
