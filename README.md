@@ -9,6 +9,7 @@ be needed only to upload the basic firmware and the initial websocket server to 
 Features include:
 * Upload of files to the NodeMCU
 * Download of files from the NodeMCU
+* Deletion of files on the NodeMCU
 * Interactive Console
  
 The Websocket Server on the NodeMCU is a slightly modified version of the one in Creationix's
