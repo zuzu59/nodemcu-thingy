@@ -100,10 +100,11 @@ Activate the package with ```Packages->nodemcu-thingy->Toggle```
 
 Click ```Connect```.
 If everything worked the red ```Disconnected``` changes to a green ```Connected``` after a few seconds.
+
 You are now good to go.
 You can upload, download, erase files on the esp8266.
 
-Upload a ```userinit.lua``` to start you custom code.
+Upload a ```userinit.lua``` to start your own custom code.
 
 See https://nodemcu.readthedocs.io/en/master/ for the good stuff...
 
