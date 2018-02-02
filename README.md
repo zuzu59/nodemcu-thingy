@@ -7,6 +7,7 @@ It uses a websocket connection to the esp8266 for communication, so in an ideal 
 be needed only to upload the basic firmware and the initial websocket server to the NodeMCU.
 
 Features include:
+
 * Upload of files to the NodeMCU
 * Download of files from the NodeMCU
 * Deletion of files on the NodeMCU
@@ -34,6 +35,7 @@ Note that ```bit``` and ```crypto``` are not selected by default.
 This creates two versions of the firmware: integer and float. If you do not know which one to use, the integer version is probably ok for you.
 
 *Flash the firmware*
+
 Download ```esptool.py``` from https://github.com/espressif/esptool.
 
 Flash the firmware to the esp8266 with (use the appropriate ```--port``` parameter)
@@ -91,7 +93,7 @@ After a few seconds you should be able to ping the esp8266 using the value from 
 
 *Use package nodemcu-thingy*
 
-Open Atom's Preferences screen (```Edit->Preferences or "Ctrl-,"```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
+Open Atom's Preferences screen (```Edit->Preferences``` or ```Ctrl-,```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
 Enter the ip address or hostname of your esp8266 (value from ```wifi.sta.sethostname()```) into the ```host``` field.
 
 Activate the package with ```Packages->nodemcu-thingy->Toggle```
