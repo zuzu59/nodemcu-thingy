@@ -1,6 +1,6 @@
 # nodemcu-thingy
 
-**THIS PACKAGE IS CURRENTLY UNDER DEVOLOPMENT AND TO BE CONSIDERED PRE-ALPHA**
+**THIS PACKAGE IS CURRENTLY UNDER DEVOLOPMENT AND TO BE CONSIDERED WALPHA**
 
 NodeMCU Thingy is an atom package for "over the air" development of lua scripts for the NodeMCU platform.
 It uses a websocket connection to the NodeMCU for communication, so in an ideal world the USB cable should
