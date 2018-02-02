@@ -21,5 +21,5 @@ dofile("main.lc")
 if file.exists("userinit.lua") then
   dofile("userinit.lua")
 else
-  printf("userinit.lua not found")
+  print("userinit.lua not found")
 end
