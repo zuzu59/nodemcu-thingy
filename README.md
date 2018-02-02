@@ -2,8 +2,8 @@
 
 **THIS PACKAGE IS CURRENTLY UNDER DEVOLOPMENT AND TO BE CONSIDERED WALPHA**
 
-NodeMCU Thingy is an atom package for "over the air" development of lua scripts for the NodeMCU platform.
-It uses a websocket connection to the NodeMCU for communication, so in an ideal world the USB cable should
+NodeMCU Thingy is an atom package for "over the air" development on the NodeMCU platform.
+It uses a websocket connection to the esp8266 for communication, so in an ideal world the USB cable should
 be needed only to upload the basic firmware and the initial websocket server to the NodeMCU.
 
 Features include:
@@ -12,27 +12,39 @@ Features include:
 * Deletion of files on the NodeMCU
 * Interactive Console
 
-*Setup*
+**Setup**
 
-*Install firmware*
-Flash your esp8266 with a current NodeMCU firmware. I recommend using a firmware built
-with Marcel Stoer's excellent online tool.https://nodemcu-build.com/
+*Get the firmware*
 
-Select branch master and the following 9 modules: bit crypto file gpio net node tmr uart wifi.
+Flash your esp8266 with a current NodeMCU firmware. I recommend using a firmware built with Marcel Stoer's excellent online tool at  https://nodemcu-build.com/
 
-note that crypto and bit are not selected by default.
+Select branch ```master``` and the following 9 modules:
+ * ```bit```
+ * ```crypto```
+ * ```file```
+ * ```gpio```
+ * ```net```
+ * ```node```
+ * ```tmr```
+ * ```uart```
+ * ```wifi```
 
-This builds two versions of the firmware: integer and float. If you do not know which one to use, the integer version is probably ok for you.
+Note that ```bit``` and ```crypto``` are not selected by default.
 
-https://github.com/espressif/esptool
+This creates two versions of the firmware: integer and float. If you do not know which one to use, the integer version is probably ok for you.
 
-flash the firmware to the esp8266 with (use the appropriate --port parameter)
+*Flash the firmware*
+Download ```esptool.py``` from https://github.com/espressif/esptool.
 
+Flash the firmware to the esp8266 with (use the appropriate ```--port``` parameter)
+```
 esptool.py --port /dev/ttyUSB0 erase_flash
 esptool.py --port /dev/ttyUSB0 write_flash -fm dio 0x00000 nodemcu-master*.bin
+```
 
 which should produce an output like:
 
+```
 esptool.py v1.3-dev
 Connecting...
 Running Cesanta flasher stub...
@@ -47,45 +59,54 @@ Flash params set to 0x0240
 Writing 401408 @ 0x0... 401408 (100 %)
 Wrote 401408 bytes at 0x0 in 34.8 seconds (92.3 kbit/s)...
 Leaving...
-
+```
+Give it a few seconds to reboot.
 
 
 *Install websocket server*
 
-cd to .atom/packages/nodemcu-thingy/mcu/
-change init.lua to match your wireless LAN
+Cd to ```.atom/packages/nodemcu-thingy/mcu/```.
+Change ```init.lua``` to match your wireless LAN.
 
+```
 station_cfg.ssid="your ssid"
 station_cfg.pwd="yout wifi password"
 wifi.sta.sethostname("your hostname for the esp8266")
-
-edit upload.sh and check if the --port value matches your system
-
-bash upload.sh
+```
+Edit ```upload.sh``` and check if the ```--port``` value matches your system and execute ```bash upload.sh```.
 
 This takes some time and you should see a lot of lines like
+```
 ->file.writeline([==[end]==]) -> ok
-
+```
 ending in
-
+```
 ->file.flush() -> ok
 ->file.close() -> ok
 --->>> All done <<<---
+```
+Restart the esp8266 by pressing the ```RST``` button on the esp8266.
 
-Restart the esp8266 by pressing the RST button.
+After a few seconds you should be able to ping the esp8266 using the value from ```wifi.sta.sethostname()```
 
-After a few seconds you should be able to ping the esp8266
+*Use package nodemcu-thingy*
 
-*Use atom package*
+Open Atom's Preferences screen (```Edit->Preferences or "Ctrl-,"```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
+Enter the ip address or hostname of your esp8266 (value from ```wifi.sta.sethostname()```) into the ```host``` field.
 
-Open Atom's Preferences screen (Edit->Preferences or "Ctrl-,"). Open "Packages". Find package "nodemcu-thingy" and click "Settings".
-Enter the ip address or hostname of your esp8266 (value from wifi.sta.sethostname()) into the "host" field.
+Activate the package with ```Packages->nodemcu-thingy->Toggle```
 
-Open the package with "Packages->nodemcu-thingy->Toggle"
-
-Click "Connect".
-If everything worked the red "Disconnected" changes to a green "Connected" after a few seconds.
+Click ```Connect```.
+If everything worked the red ```Disconnected``` changes to a green ```Connected``` after a few seconds.
 You are now good to go.
+You can upload, download, erase files on the esp8266.
+
+Upload a ```userinit.lua``` to start you custom code.
+
+See https://nodemcu.readthedocs.io/en/master/ for the good stuff...
+
+
+To be continued...
 
 
 
