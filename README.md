@@ -13,7 +13,7 @@ Features include:
 * Deletion of files on the NodeMCU
 * Interactive Console
 
-![demo](https://github.com/holtermp/mcu-thingy/screencasts/connect.gif)
+![demo](https://github.com/holtermp/nodemcu-thingy/screencasts/connect.gif)
 
 **Setup**
 
@@ -94,7 +94,7 @@ Restart the esp8266 by pressing the ```RST``` button on the esp8266.
 After a few seconds you should be able to ping the esp8266 using the value from ```wifi.sta.sethostname()```
 
 Very brave programmers can now unhook the usb cable from the computer and run
-the esp8266 on some other power source (probably a phone charger). 
+the esp8266 on some other power source (probably a phone charger).
 
 *Use package nodemcu-thingy*
 
