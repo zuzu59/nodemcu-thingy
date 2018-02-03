@@ -13,7 +13,7 @@ Features include:
 * Deletion of files on the NodeMCU
 * Interactive Console
 
-![demo](https://github.com/holtermp/nodemcu-thingy/screencasts/connect.gif)
+![demo](https://github.com/holtermp/nodemcu-thingy/blob/master/screencasts/connect.gif)
 
 **Setup**
 
