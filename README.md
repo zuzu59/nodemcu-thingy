@@ -1,10 +1,10 @@
 # nodemcu-thingy
 
-**THIS PACKAGE IS CURRENTLY UNDER DEVOLOPMENT AND TO BE CONSIDERED WALPHA**
+**THIS PACKAGE IS CURRENTLY UNDER DEVOLOPMENT AND TO BE CONSIDERED ALPHA**
 
-NodeMCU Thingy is an atom package for "over the air" development on the NodeMCU platform.
-It uses a websocket connection to the esp8266 for communication, so in an ideal world the USB cable should
-be needed only to upload the basic firmware and the initial websocket server to the NodeMCU.
+NodeMCU Thingy is an [atom](https://atom.io/) package for "over the air" development on the NodeMCU platform.
+It uses a websocket connection to the esp8266 for communication, so in an ideal world the USB cable should be needed only to upload the basic firmware and the initial websocket server to the NodeMCU.
+
 
 Features include:
 
@@ -12,6 +12,8 @@ Features include:
 * Download of files from the NodeMCU
 * Deletion of files on the NodeMCU
 * Interactive Console
+
+![demo](https://github.com/holtermp/mcu-thingy/screencasts/connect.gif)
 
 **Setup**
 
@@ -91,6 +93,9 @@ Restart the esp8266 by pressing the ```RST``` button on the esp8266.
 
 After a few seconds you should be able to ping the esp8266 using the value from ```wifi.sta.sethostname()```
 
+Very brave programmers can now unhook the usb cable from the computer and run
+the esp8266 on some other power source (probably a phone charger). 
+
 *Use package nodemcu-thingy*
 
 Open Atom's Preferences screen (```Edit->Preferences``` or ```Ctrl-,```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
@@ -104,7 +109,7 @@ If everything worked the red ```Disconnected``` changes to a green ```Connected`
 You are now good to go.
 You can upload, download, erase files on the esp8266.
 
-Upload a ```userinit.lua``` to start your own custom code.
+Upload a custom ```userinit.lua``` to start your own custom code.
 
 See https://nodemcu.readthedocs.io/en/master/ for the good stuff...
 
