@@ -21,7 +21,7 @@ Features include:
 
 Flash your esp8266 with a current NodeMCU firmware. I recommend using a firmware built with Marcel Stoer's excellent online tool at  https://nodemcu-build.com/
 
-Select branch ```master``` and the following 9 modules:
+Select branch ```master``` and at least the following 9 modules:
  * ```bit```
  * ```crypto```
  * ```file```
@@ -93,12 +93,10 @@ Restart the esp8266 by pressing the ```RST``` button on the esp8266.
 
 After a few seconds you should be able to ping the esp8266 using the value from ```wifi.sta.sethostname()```
 
-Very brave programmers can now unhook the usb cable from the computer and run
-the esp8266 on some other power source (probably a phone charger).
+*Configure package nodemcu-thingy*
 
-*Use package nodemcu-thingy*
 
-Open Atom's Preferences screen (```Edit->Preferences``` or ```Ctrl-,```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
+Open Atom's preferences screen (```Edit->Preferences``` or ```Ctrl-,```). Open ```Packages```. Find package ```nodemcu-thingy``` and click ```Settings```.
 Enter the ip address or hostname of your esp8266 (value from ```wifi.sta.sethostname()```) into the ```host``` field.
 
 Activate the package with ```Packages->nodemcu-thingy->Toggle```
@@ -106,15 +104,33 @@ Activate the package with ```Packages->nodemcu-thingy->Toggle```
 Click ```Connect```.
 If everything worked the red ```Disconnected``` changes to a green ```Connected``` after a few seconds.
 
+![demo](https://github.com/holtermp/nodemcu-thingy/blob/master/screencasts/connect.gif)
+
 You are now good to go.
+Very brave programmers can now unhook the usb cable from the computer and run
+the esp8266 on some other power source (probably a phone charger).
+
+*Use package nodemcu-thingy*
+
+
 You can upload, download, erase files on the esp8266.
 
-Upload a custom ```userinit.lua``` to start your own custom code.
+The installation process has installed 3 files on the esp8266 which are protected from modification by this package:
+* ```websocket.lc``` implements the websocket protocol
+* ```main.lc``` implements the server side functions for this package
+* ```init.lua``` called by the NodeMCU firmware on startup.
+ * sets up the wifi connection
+ * starts the websocket server
+ * calls ```userinit.lua``` if present.
 
-See https://nodemcu.readthedocs.io/en/master/ for the good stuff...
+(The original implementation of these 3 files is borrowed from [nodemcu-webide](https://github.com/creationix/nodemcu-webide))
 
+To implement your own functionality upload a custom ```userinit.lua``` to start your own custom code.
 
-To be continued...
+![demo](https://github.com/holtermp/nodemcu-thingy/blob/master/screencasts/upload.gif)
+
+See https://nodemcu.readthedocs.io/en/master/ for the all the good stuff you can use...
+
 
 
 
