@@ -14,6 +14,10 @@
       {
         "label": "Delete on NodeMCU",
         "command": "nodemcu-thingy:delete"
+      },
+      {
+        "label": "Run on NodeMCU",
+        "command": "nodemcu-thingy:dofile"
       }
     ]
   },
