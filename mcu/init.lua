@@ -1,4 +1,4 @@
-wifi.setmode(wifi.STATIONAP)
+wifi.setmode(wifi.STATION)
 station_cfg={}
 
 station_cfg.ssid="your ssid"
